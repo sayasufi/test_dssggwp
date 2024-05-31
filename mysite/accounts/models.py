@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.db import models
+from django.utils import timezone
 
 
 class Profile(models.Model):
@@ -21,8 +22,8 @@ class Room(models.Model):
 
 class RoomBooking(models.Model):
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
+    start_time = models.DateTimeField(default=timezone.now)
+    end_time = models.DateTimeField(default=timezone.now)
     purpose = models.CharField(max_length=255)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
