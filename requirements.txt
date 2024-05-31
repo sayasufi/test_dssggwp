@@ -1,0 +1,14 @@
+annotated-types==0.7.0
+asgiref==3.8.1
+Django==5.0.6
+django-allauth==0.63.2
+django-bootstrap-datepicker-plus==5.0.5
+django-filter==24.2
+django-tempus-dominus==5.1.2.17
+djangorestframework==3.15.1
+lxml==5.2.2
+pydantic==2.7.2
+pydantic_core==2.18.3
+python-docx==1.1.2
+sqlparse==0.5.0
+typing_extensions==4.12.0

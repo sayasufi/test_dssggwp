@@ -1,0 +1,11 @@
+{% extends "accounts/base.html" %}
+
+{% block title %}Выйти{% endblock %}
+
+{% block content %}
+<form method="post" action="{% url 'account_logout' %}">
+    {% csrf_token %}
+    <p>Вы уверены, что хотите выйти?</p>
+    <button type="submit">Выйти</button>
+</form>
+{% endblock %}

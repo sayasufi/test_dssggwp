@@ -1,0 +1,241 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.header {
+    background-color: #1f1f1f;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    margin: 0;
+    color: #ffffff;
+}
+
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links ul li {
+    margin-left: 20px;
+}
+
+.nav-links ul li a {
+    color: #bb86fc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #bb86fc;
+    border-radius: 10px;
+    background-color: #1f1f1f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+form input, form button, form select, form .custom-checkbox {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #bb86fc;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+form input:focus, form select:focus {
+    border-color: #a75ccf;
+    outline: none;
+    box-shadow: 0 0 5px #a75ccf;
+}
+
+form label {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form .custom-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+form .custom-checkbox input {
+    width: auto;
+    margin-right: 10px;
+    accent-color: #bb86fc;
+}
+
+form button {
+    background-color: #bb86fc;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background-color: #a75ccf;
+    box-shadow: 0 0 5px #a75ccf;
+}
+
+.errorlist {
+    color: #ff6b6b;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+p {
+    margin: 10px 0;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #bb86fc;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 5px;
+    transition: all 0.3s ease;
+}
+
+select:focus {
+    border-color: #a75ccf;
+    outline: none;
+    box-shadow: 0 0 5px #a75ccf;
+}
+
+.booking-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+.booking-table th, .booking-table td {
+    border: 1px solid #bb86fc;
+    padding: 10px;
+    text-align: center;
+}
+
+.booking-table th {
+    background-color: #333;
+    color: #bb86fc;
+    font-weight: bold;
+}
+
+.booking-table tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+.booking-table tr:hover {
+    background-color: #444;
+}
+
+.ui-datepicker {
+    background: #333;
+    border: 1px solid #555;
+    color: #eee;
+}
+
+.ui-datepicker-header {
+    background: #444;
+    border-bottom: 1px solid #555;
+}
+
+.ui-datepicker-calendar .ui-state-highlight {
+    background: #bb86fc;
+    color: #333;
+}
+
+.ui-timepicker-container {
+    background: #333;
+    border: 1px solid #555;
+}
+
+.download-report-form {
+    margin-top: 20px;
+}
+
+.download-report-form button {
+    background-color: #bb86fc;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.download-report-form button:hover {
+    background-color: #a75ccf;
+    box-shadow: 0 0 5px #a75ccf;
+}

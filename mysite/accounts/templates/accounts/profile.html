@@ -1,0 +1,9 @@
+{% extends "accounts/base.html" %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block content %}
+<h1>Профиль пользователя</h1>
+<p>Имя пользователя: {{ user.username }}</p>
+<p>Электронная почта: {{ user.email }}</p>
+{% endblock %}

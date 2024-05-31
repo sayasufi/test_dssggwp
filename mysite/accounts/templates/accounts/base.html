@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Бронирование переговорных{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="navbar">
+            <div class="logo">
+                <h1>Бронирование переговорных</h1>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="{% url 'home' %}">Главная</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'book_room' %}">Бронирование</a></li>
+                        <li><a href="{% url 'booking_list' %}">Список бронирований</a></li>
+                        <li><a href="{% url 'profile' %}">Профиль</a></li>
+                        <li><a href="{% url 'account_logout' %}">Выйти</a></li>
+                    {% else %}
+                        <li><a href="{% url 'account_login' %}">Войти</a></li>
+                        <li><a href="{% url 'account_signup' %}">Регистрация</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% extends "accounts/base.html" %}
+
+{% block title %}Список бронирований{% endblock %}
+
+{% block content %}
+<h1>Список бронирований</h1>
+<form method="get">
+    {{ form.as_p }}
+    <button type="submit">Фильтр</button>
+</form>
+
+<table class="booking-table">
+    <thead>
+        <tr>
+            <th>Комната</th>
+            <th>Начало</th>
+            <th>Окончание</th>
+            <th>Цель</th>
+            <th>Пользователь</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.room.room_number }}</td>
+                <td>{{ booking.start_time|date:"d M Y H:i" }}</td>
+                <td>{{ booking.end_time|date:"d M Y H:i" }}</td>
+                <td>{{ booking.purpose }}</td>
+                <td>{{ booking.user.username }}</td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="5">Бронирования не найдены</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<form method="get" action="{% url 'generate_report' %}" class="download-report-form">
+    <input type="hidden" name="start_date" value="{{ form.cleaned_data.start_date }}">
+    <input type="hidden" name="end_date" value="{{ form.cleaned_data.end_date }}">
+    <input type="hidden" name="room_id" value="{{ form.cleaned_data.room.id }}">
+    <button type="submit">Скачать отчет</button>
+</form>
+{% endblock %}

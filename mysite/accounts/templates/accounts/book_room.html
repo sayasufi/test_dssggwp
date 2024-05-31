@@ -1,0 +1,31 @@
+{% extends "accounts/base.html" %}
+
+{% block title %}Бронирование комнаты{% endblock %}
+
+{% block content %}
+<h1>Бронирование комнаты</h1>
+<form method="post">
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+        <div class="errorlist">{{ form.non_field_errors }}</div>
+    {% endif %}
+    {{ form.media }}
+    <div class="form-group">
+        {{ form.room.label_tag }}
+        {{ form.room }}
+    </div>
+    <div class="form-group">
+        {{ form.start_time.label_tag }}
+        {{ form.start_time }}
+    </div>
+    <div class="form-group">
+        {{ form.end_time.label_tag }}
+        {{ form.end_time }}
+    </div>
+    <div class="form-group">
+        {{ form.purpose.label_tag }}
+        {{ form.purpose }}
+    </div>
+    <button type="submit">Забронировать</button>
+</form>
+{% endblock %}
